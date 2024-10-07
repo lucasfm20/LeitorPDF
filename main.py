@@ -5,17 +5,6 @@ from tkinter.filedialog import askopenfilename
 
 Tk().withdraw()
 
-contato ='Contato'
-competencia ='Principais'
-
-def intervalo(ini,fim):
-    indice_inicio = palavras.index(ini)
-    indice_fim = palavras.index(fim)
-
-
-    intervalo_palavras = palavras[indice_inicio:indice_fim]
-
-    print(intervalo_palavras)
 
 caminho_arquivo = askopenfilename(title="Selecione o arquivo PDF", 
                                   filetypes=[("Arquivos PDF", "*.pdf")])
@@ -30,11 +19,7 @@ if caminho_arquivo:
         
         for page in reader.pages:
             texto_completo += page.extract_text()     
-        #print(texto_completo)
-        palavras = texto_completo.split()
-        #print(palavras)
-
-        intervalo(contato,competencia)
+        print(texto_completo)
 else:
     print("Nenhum arquivo foi selecionado.")
 
